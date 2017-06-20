@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     root "events#index"
     resources :events
   end
+
+  resource :user
   get "/faq" => "pages#faq"
   root "events#index"
 
