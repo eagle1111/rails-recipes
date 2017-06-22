@@ -27,10 +27,15 @@
 </div>
 
 <div class="form-group">
-  <% Event::STATUS.each do |status| %>
-    <label>
-      <%= f.radio_button :status, status %>
-      <%= t(status, :scope => "event.status") %>
-    </label>
-  <% end %>
+  <%= f.label :status %>
+  <div class="btn-group" data-toggle="buttons">
+
+    <% Event::STATUS.each do |status| %>
+      <label class="btn btn-default <%= (status == f.object.status)? 'active' : '' %>">
+
+        <%= f.radio_button :status, status %>
+        <%= t(status, :scope => "event.status") %>
+      </label>
+    <% end %>
+  </div>
 </div>
