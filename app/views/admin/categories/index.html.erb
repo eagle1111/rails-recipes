@@ -1,0 +1,13 @@
+<div class="pull-right">
+  <%= link_to("增加分类", new_admin_category_path(@category), :class => "btn btn-danger") %>
+</div>
+
+<div class="group">
+
+
+<% @categories.each do |category| %>
+  <p>
+    <%= link_to category.name %>
+  </p>
+<% end %>
+</div>
