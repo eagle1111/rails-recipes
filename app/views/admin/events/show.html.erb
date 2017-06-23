@@ -3,5 +3,5 @@
 <p>
   <%= link_to "打開前台", event_path(@event), :target => "_blank", :class => "btn btn-primary" %>
 </p>
-
-<%= simple_format @event.description %>
+<!-- 白名单过滤 -->
+<%= sanitize @event.description %>
