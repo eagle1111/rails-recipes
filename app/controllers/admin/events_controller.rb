@@ -17,12 +17,12 @@ class Admin::EventsController < AdminController
     ticket_names = @event.tickets.map { |t| t.name }
 
     @data1 = {
-      labels: ticket_names,
-      database: [{
-        label: "# of registrations",
-        data: @event.tickets.map{ |t| t.registrations.count},
-        backgroundColor: colors,
-        borderWidth: 1
+        labels: ticket_names,
+        datasets: [{
+          label: "# of registrations",
+          data: @event.tickets.map{ |t| t.registrations.count },
+          backgroundColor: colors,
+          borderWidth: 1
         }]
     }
   end
